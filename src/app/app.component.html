@@ -3,10 +3,26 @@
         <h2>Búsquedas</h2>
         <hr>
         <ul class="list-group">
-            <li class="list-group-item">Por país</li>
-            <li class="list-group-item">Por región</li>
-            <li class="list-group-item">Por capital</li>
+            <li routerLink=""
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                class="list-group-item">
+                Por país</li>
+            <li routerLink="region"
+                routerLinkActive="active"
+                class="list-group-item">
+                Por región</li>
+            <li routerLink="capital"
+                routerLinkActive="active"
+                class="list-group-item">
+                Por capital</li>
         </ul>
+        <!-- 
+            El routerLink nos lo da el RouterModule, propio de Angular 
+            El routerLinkActive añade la class cuando este en la ruta
+            [routerLinkActiveOptions]="{exact: true}" para indicar que la ruta sea exacta y no se quede seleccionada
+        -->
+        
     </div>
     <div class="col-9">
         <router-outlet></router-outlet>
