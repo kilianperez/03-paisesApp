@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PaisService {
-  private apiUrl: string = 'https://restcountries.com/v3'; // URL de la api
+  private apiUrl: string = 'https://restcountries.com/v2'; // URL de la api
   // private apiUrl: string = 'https://restcountrxies.eu/rest/v2'; // URL de la api antigua
   constructor(
     private http: HttpClient //importamos el servicio de http para las peticiones a la api
