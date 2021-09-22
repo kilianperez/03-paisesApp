@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-por-pais',
-  template: `
-    <p>
-      por-pais works!
-    </p>
-  `,
+  templateUrl: './por-pais.component.html',
   styles: [
   ]
 })
-export class PorPaisComponent implements OnInit {
+export class PorPaisComponent{
+
+  termino: string = ''
 
   constructor() { }
 
-  ngOnInit(): void {
+  buscar(){ // capturamos lo que viene por el formulario
+    console.log(this.termino);
   }
 
 }
