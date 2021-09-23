@@ -19,10 +19,16 @@ export class PorPaisComponent{
   buscar(){ // capturamos lo que viene por el formulario
     this.hayError = false
     console.log(this.termino);
-    this.paisService.buscarPais(this.termino).subscribe((resp) =>{ // recibimos la respuesta de la api del servicio
-        console.log(resp);
+    this.paisService.buscarPais(this.termino).subscribe((paises) =>{ // recibimos la respuesta de la api del servicio
+        // console.log(paises);
 
-      }, error =>{ 
+        // if (paises.status === 404 ) { // TODO: Parche para saber el error
+        //   console.log('Parche error');
+        //   this.hayError = true;
+        // }
+        
+
+      }, error =>{ // TODO: No esta recibiendo el error
         console.log(error);
         console.log('error');
         this.hayError = true;
