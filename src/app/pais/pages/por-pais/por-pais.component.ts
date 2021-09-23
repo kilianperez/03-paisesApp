@@ -22,12 +22,7 @@ export class PorPaisComponent{
     this.paisService.buscarPais(this.termino).subscribe((resp) =>{ // recibimos la respuesta de la api del servicio
         console.log(resp);
 
-        if (resp.status === 404) { // TODO: Parche para saber el error
-          console.log('Parche error');
-          this.hayError = true;
-        }
-
-      }, error =>{ // TODO: No esta recibiendo el error
+      }, error =>{ 
         console.log(error);
         console.log('error');
         this.hayError = true;
