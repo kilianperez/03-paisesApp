@@ -25,7 +25,9 @@
 <div 
  *ngIf="hayError"
  class="alert alert-danger">No se encontro nada con el término {{termino}}</div>
-<div class="row">
+<div 
+ *ngIf="paises.length > 0"
+ class="row">
     <div class="col">
         <table class="table table-hover">
             <thead>
@@ -38,13 +40,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Bandera</td>
-                    <td>nombre</td>
-                    <td>123154</td>
+                <tr *ngFor="let pais of paises; index as i">
+                    <td>{{i+1}}</td>
+                    <td><img class="small-flag" [src]="pais.flags[0]" [alt]="pais.name"></td>
+                    <td>{{pais.name}}</td>
+                    <td>{{pais.population | number}}</td>
                     <td>
-                        <a href="/pais/cri">Ver..</a>
+                        <a [routerLink]="['/pais', pais.alpha2Code ]">Ver..</a>
                     </td>
                 </tr>
             </tbody>

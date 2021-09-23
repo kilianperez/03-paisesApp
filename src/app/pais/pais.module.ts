@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
+import { RouterModule } from '@angular/router';
 
 // Al inicio Modulos de angular
 
@@ -26,7 +27,8 @@ import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
   ],
   imports: [
     CommonModule,
-    FormsModule // Exporta los providers y directives necesarios para los formularios basados ​​en plantillas, dejándolos disponibles para que los importen los NgModules que importan este módulo.
+    FormsModule, // Exporta los providers y directives necesarios para los formularios basados ​​en plantillas, dejándolos disponibles para que los importen los NgModules que importan este módulo.
+    RouterModule
   ],
 })
 export class PaisModule {}
