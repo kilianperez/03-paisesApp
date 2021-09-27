@@ -8,7 +8,7 @@ import { Country } from '../interfaces/pais.interface';
 })
 export class PaisService {
   
-  private apiUrl: string = 'https://restcountries.com/v2'; // URL de la api
+  private apiUrl: string = 'https://restcountries.com/v3'; // URL de la api
   // private apiUrl: string = 'https://restcountrxies.eu/rest/v2'; // URL de la api antigua
   // d421c79edca7ee9341ab0587143ce021;
 
