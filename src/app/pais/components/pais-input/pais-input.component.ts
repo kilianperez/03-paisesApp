@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -11,6 +11,7 @@ export class PaisInputComponent implements OnInit {
   @Output() onEnter: EventEmitter<string> = new EventEmitter(); // emitir evento del formulario
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
   debouncer: Subject<string> = new Subject();
+  @Input() placeholder: string = '';
 
   ngOnInit() {
     this.debouncer

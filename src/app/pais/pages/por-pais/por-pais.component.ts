@@ -13,6 +13,7 @@ export class PorPaisComponent{
   termino: string = ''
   hayError: boolean = false;
   paises : Country[] = []
+  placeholder: string = "Buscar por país...";
 
   constructor( 
     private paisService: PaisService // Importamos el servicio del pais para poder tener acceso a la api

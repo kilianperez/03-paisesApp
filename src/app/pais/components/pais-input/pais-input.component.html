@@ -7,10 +7,10 @@
     type="text"
     name="termino"
     class="form-control"
-    placeholder="Buscar país..."
     [(ngModel)]="termino"
     (input)="teclaPresionada()"
     autocomplete="off"
+    [placeholder]="placeholder"
   />
   <!-- 
           [(ngModel)]="termino" Modulo de formularios con el valor para vincularlo con formulario

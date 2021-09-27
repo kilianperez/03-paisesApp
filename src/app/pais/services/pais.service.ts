@@ -7,7 +7,6 @@ import { Country } from '../interfaces/pais.interface';
   providedIn: 'root',
 })
 export class PaisService {
-  
   private apiUrl: string = 'https://restcountries.com/v3'; // URL de la api
   // private apiUrl: string = 'https://restcountrxies.eu/rest/v2'; // URL de la api antigua
   // d421c79edca7ee9341ab0587143ce021;
@@ -21,7 +20,12 @@ export class PaisService {
 
     return this.http.get<Country[]>(url); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
   }
-  
+  buscarCapital(termino: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/capital/${termino}`;
+
+    return this.http.get<Country[]>(url); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
+  }
+
   /*
   private apiUrl: string = 'http://api.countrylayer.com/v2';
   private apiKey: string = 'd421c79edca7ee9341ab0587143ce021';
