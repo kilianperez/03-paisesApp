@@ -4,10 +4,10 @@
     <div class="col">
         <button *ngFor="let region of regiones"
         class="btn mr-1 mb-1"
-        [class]="region === regionActiva ? 'btn-primary': 'btn-outline-primary' "
+        [class]="getClaseCSS(region)"
 
         (click)="activarRegion(region)">
-        {{region}}
+        {{region | titlecase}}
     </button> 
     <!-- Añadir la clase si es seleccionado el elemento  -->
     <!-- [class.btn-primary]="region === regionActiva" -->

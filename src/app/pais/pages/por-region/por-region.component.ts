@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 })
 export class PorRegionComponent {
 
-  regiones: string[] = ['south america', 'southern europe', 'central america', 'eastern asia']
+  regiones: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
   regionActiva: string = '';
   constructor() { }
-
+  getClaseCSS(region:string):string{
+    return ((region === this.regionActiva) ? 'btn-primary' : 'btn-outline-primary');
+  }
   activarRegion(region: string){
     this.regionActiva= region;
     // TODO: hacer el llamado al servicio
