@@ -18,9 +18,11 @@ export class PorPaisComponent{
     private paisService: PaisService // Importamos el servicio del pais para poder tener acceso a la api
   ) { }
 
-  buscar(){ // capturamos lo que viene por el formulario
+  buscar(termino: string){ // capturamos lo que viene por el formulario
     this.hayError = false
     console.log(this.termino);
+    this.termino = termino;
+
     this.paisService.buscarPais(this.termino).subscribe((paises) =>{ // recibimos la respuesta de la api del servicio
         console.log(paises);
 
