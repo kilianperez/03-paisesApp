@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-por-capital',
-  template: `
-    <p>
-      por-capital works!
-    </p>
-  `,
+  templateUrl: './por-capital.component.html',
   styles: [
   ]
 })
