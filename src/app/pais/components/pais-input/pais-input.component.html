@@ -1,0 +1,17 @@
+<form (ngSubmit)="buscar()">
+  <!-- 
+            Habilita la vinculación de expresiones de AngularJS a eventos onsubmit. 
+            Además se evita la acción por defecto de recargar la página
+        -->
+  <input
+    type="text"
+    name="termino"
+    class="form-control"
+    placeholder="Buscar país..."
+    [(ngModel)]="termino"
+    autocomplete="off"
+  />
+  <!-- 
+          [(ngModel)]="termino" Modulo de formularios con el valor para vincularlo con formulario
+       -->
+</form>
