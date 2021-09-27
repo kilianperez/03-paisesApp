@@ -25,6 +25,11 @@ export class PaisService {
 
     return this.http.get<Country[]>(url); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
   }
+  getPaisPorAlpha(id: string): Observable<Country> {
+    const url = `${this.apiUrl}/alpha/${id}`;
+
+    return this.http.get<Country>(url); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
+  }
 
   /*
   private apiUrl: string = 'http://api.countrylayer.com/v2';

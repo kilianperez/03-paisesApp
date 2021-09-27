@@ -20,7 +20,7 @@ const routes: Routes = [
     component: PorCapitalComponent,
   },
   {
-    path: 'pais/:id', // con los dos puntos se vuelve dinámico 
+    path: 'pais/:id', // con los dos puntos se vuelve dinámico, el id son los parametros que vamos a recibir
     component: VerPaisComponent,
   },
   {
