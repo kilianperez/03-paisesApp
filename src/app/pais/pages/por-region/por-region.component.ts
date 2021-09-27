@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-por-region',
-  template: `
-    <p>
-      por-region works!
-    </p>
-  `,
+  templateUrl:'./por-region.component.html',
   styles: [
   ]
 })
-export class PorRegionComponent implements OnInit {
+export class PorRegionComponent {
 
+  regiones: string[] = ['south america', 'southern europe', 'central america', 'eastern asia']
+  regionActiva: string = '';
   constructor() { }
 
-  ngOnInit(): void {
+  activarRegion(region: string){
+    this.regionActiva= region;
+    // TODO: hacer el llamado al servicio
   }
 
 }
