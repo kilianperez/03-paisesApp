@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Country } from '../interfaces/pais.interface';
@@ -11,6 +11,9 @@ export class PaisService {
   // private apiUrl: string = 'https://restcountrxies.eu/rest/v2'; // URL de la api antigua
   // d421c79edca7ee9341ab0587143ce021;
 
+  get httpParams (){
+    return new HttpParams().set('fields', 'name,capital,cca3,area,flags');
+  }
   constructor(
     private http: HttpClient //importamos el servicio de http para las peticiones a la api
   ) {}
@@ -18,12 +21,12 @@ export class PaisService {
   buscarPais(termino: string): Observable<Country[]> {
     const url = `${this.apiUrl}/name/${termino}`;
 
-    return this.http.get<Country[]>(url); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
+    return this.http.get<Country[]>(url, { params : this.httpParams }); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
   }
   buscarCapital(termino: string): Observable<Country[]> {
     const url = `${this.apiUrl}/capital/${termino}`;
 
-    return this.http.get<Country[]>(url); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
+    return this.http.get<Country[]>(url, { params: this.httpParams }); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
   }
   getPaisPorAlpha(id: string): Observable<Country> {
     const url = `${this.apiUrl}/alpha/${id}`;
@@ -33,7 +36,7 @@ export class PaisService {
   buscarPorRegion(region: string): Observable<Country[]> {
     const url = `${this.apiUrl}/region/${region}`;
 
-    return this.http.get<Country[]>(url); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
+    return this.http.get<Country[]>(url, { params: this.httpParams }); // si queremos que esto se ejecute tiene que tener un .subscribe() pero la informacion no la queremos mandar dentro del servicio sino al componente que quiere buscar el país
   }
   /*
   private apiUrl: string = 'http://api.countrylayer.com/v2';
